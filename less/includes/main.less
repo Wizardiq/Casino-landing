@@ -1,0 +1,120 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url(../img/Fortune_circle3_BG.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    &__block{
+        position: relative;
+    }
+    &__circle {
+        position: relative;
+    }
+    &__icon_big {
+        display: block;
+    }
+    &__icon_mobile {
+        display: none;
+    }
+    &__winnings {
+        position: absolute;
+        top: 15%;
+        right: 42.5%;
+        z-index: 3;
+    }
+    &__wheel {
+        position: absolute;
+        top: 21%;
+        right: 25%;
+        z-index: 2;
+        transition: transform 3s cubic-bezier(0.55,0.65,0.75,1);
+        transform: rotate(0deg);
+    }
+    &__play {
+        position: absolute;
+        top: 37%;
+        right: 40%;
+        z-index: 5;
+        cursor: pointer; 
+    }
+    &__glow {
+        position: absolute;
+        top: 3%;
+        right: 12%;
+        z-index: 1;
+        opacity: 0;
+    }
+    &__money {
+        position: absolute;
+        top: 59%;
+        right: 22%;
+        z-index: 4;
+    }
+    &__icons {
+        position: absolute;
+        top: 86%;
+    }
+    &__attempts {
+        font-weight: bold;
+        font-size: 49px;
+        line-height: 57px;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        position: absolute;
+        top: 68%;
+        right: 18.5%;
+    }
+}
+.active {
+    opacity: 0;
+    animation-name: glow;
+    animation-duration: 0.3s;
+    animation-iteration-count: 2;
+}
+
+@keyframes glow {
+    0% {opacity: 0;}
+    50% {opacity: 1;}
+    100% {opacity: 0;}
+
+}
+
+@media(max-width: 1200px){
+    .main {
+        &__icon_big {
+            display: none;
+        }
+        &__icon_mobile {
+            display: block;
+        }
+        &__winnings {
+            top: 26%;
+            right: 38.5%;
+        }
+        &__wheel {
+            top: 31.7%;
+            right: 11%;
+        }
+        &__play {
+            top: 47%;
+            right: 34%;
+        }
+        &__glow {
+            top: 21%;
+            right: 0%;
+        }
+        &__money {
+            top: 66%;
+            right: 8%;
+        }
+        &__icons {
+            top: 93%;
+        }
+        &__attempts {
+            top: 85.5%;
+            right: 56%;
+        }
+    }
+}
